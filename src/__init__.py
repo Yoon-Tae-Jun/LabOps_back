@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from .db import init_db
 from .auth.routes import auth_router
+from .eagle.fastEx import eagle_router
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 
@@ -36,4 +37,4 @@ app.add_middleware(
 )
 
 app.include_router(auth_router, prefix=f"/auth", tags=['auth'])
-
+app.include_router(eagle_router, prefix=f"/", tags=['eagle'])
