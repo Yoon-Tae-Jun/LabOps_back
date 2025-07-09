@@ -37,4 +37,4 @@ app.add_middleware(
 )
 
 app.include_router(auth_router, prefix=f"/auth", tags=['auth'])
-app.include_router(eagle_router, prefix=f"/", tags=['eagle'])
+app.include_router(eagle_router, tags=['eagle'])

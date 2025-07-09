@@ -35,6 +35,7 @@ class JobScheduler:
                 if idle_node:
                     node_name = idle_node[0]
                     job = self.job_queue.pop(0)
+                    job_count -= 1
                     user_name = self.node_user_map.get(node_name)
 
                     self.job_status_map[job.job_name] = 'running'
